@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="lt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kosmetologė Natalija Ivaško • Procedūrų katalogas</title>
+  <style>
+    :root{
+      --bg:#fffaf7;
+      --card:#ffffff;
+      --ink:#1a1a1a;
+      --muted:#6b6b6b;
+      --brand1:#f6a84f;
+      --brand2:#f17d5c;
+      --stroke:#f1e2d8;
+      --radius:16px;
+      --shadow:0 8px 20px rgba(0,0,0,.05);
+    }
+    *{box-sizing:border-box}
+    body{margin:0; font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial; background:linear-gradient(120deg,#fff5ec,#fff9f7 40%); color:var(--ink)}
+    header{position:sticky; top:0; z-index:50; background:rgba(255,255,255,.9); backdrop-filter:blur(12px); border-bottom:1px solid var(--stroke)}
+    .wrap{max-width:1100px; margin:0 auto; padding:16px 20px}
+    h1{margin:0; font-size:24px; font-weight:800; background:linear-gradient(135deg,var(--brand1),var(--brand2)); -webkit-background-clip:text; -webkit-text-fill-color:transparent}
+    .sub{color:var(--muted); font-size:14px; margin-top:4px}
+    .toolbar{display:flex; gap:10px; margin-top:12px; flex-wrap:wrap}
+    .toolbar input,.toolbar select{border:1px solid var(--stroke); border-radius:999px; padding:10px 14px; background:#fff; min-width:220px}
+    main{padding:28px 20px 64px}
+    .grid{max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px}
+    .card{background:var(--card); border:1px solid var(--stroke); border-radius:var(--radius); padding:18px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:8px; transition:transform .15s ease}
+    .card:hover{transform:translateY(-2px)}
+    .cat{font-size:12px; color:#fff; background:linear-gradient(135deg,var(--brand1),var(--brand2)); padding:4px 10px; border-radius:999px; align-self:flex-start}
+    .title{font-weight:700; font-size:18px}
+    .meta{font-size:13px; color:var(--muted)}
+    .price{margin-left:6px; font-weight:800; color:var(--ink)}
+    .desc{font-size:14px; color:#333}
+    footer{background:#fff; border-top:1px solid var(--stroke); padding:24px 20px; text-align:center}
+    .social{margin-top:12px}
+    .social a{display:inline-block; margin:0 8px; padding:8px 14px; border-radius:999px; text-decoration:none; color:#fff; font-weight:600; background:linear-gradient(135deg,var(--brand1),var(--brand2)); box-shadow:0 4px 10px rgba(0,0,0,.1); transition:opacity .2s}
+    .social a:hover{opacity:.85}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>Kosmetologė Natalija Ivaško</h1>
+    <div class="sub">Profesionali odos priežiūra: aknei, pigmentacijai, jauninimui.</div>
+    <div class="toolbar">
+      <input id="q" type="search" placeholder="Paieška procedūrai…">
+      <select id="category">
+        <option value="all">Visos kategorijos</option>
+      </select>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div id="grid" class="grid"></div>
+</main>
+
+<footer>
+  <div>Sekite mane socialiniuose tinkluose:</div>
+  <div class="social">
+    <a href="https://www.instagram.com/natalija_ivsk?igsh=c3g3MzY5c3JyM2Mw" target="_blank">Instagram</a>
+    <a href="https://www.facebook.com/share/1UcmQPsns1/?mibextid=wwXIfr" target="_blank">Facebook</a>
+  </div>
+</footer>
+
+<script>
+const SERVICES = [
+  {cat:"Masažai", title:"Asahi japoniškas giliųjų audinių veido masažas", duration:"1 h", price:"40 €", desc:"Intensyvi technika limfotakai ir tonusui: mažina paburkimą, lygina smulkias raukšleles, formuoja veido ovalą."},
+  {cat:"Konsultacijos", title:"Kosmetologo konsultacija", duration:"30 min", price:"25 €", desc:"Išsami odos analizė, problemų įvertinimas (aknė, pigmentacija, jautrumas, senėjimas), individualus procedūrų ir namų priežiūros planas."},
+  {cat:"Mikroadatinės procedūros", title:"Mikroadatinė veido procedūra su egzosomomis", duration:"1 h", price:"150 €", desc:"Mikronidlingas + egzosomos: aktyvina regeneraciją, kolageno/elastino sintezę, ramina, skaistina."},
+  {cat:"Mikroadatinės procedūros", title:"Mikroadatinė veido procedūra su egzosomomis + kaklas", duration:"1 h", price:"170 €", desc:"Papildomas kaklo plotas – stipresnis stangrumas ir tolygesnis tonas."},
+  {cat:"Mikroadatinės procedūros", title:"Mikroadatinė veido procedūra su egzosomomis + kaklas + dekoltė", duration:"1 h", price:"200 €", desc:"Kompleksinis veidas+kaklas+dekoltė – intensyvus atsinaujinimas ir švytėjimas."},
+  {cat:"Mikroadatinės procedūros", title:"Mikroadatinė veido procedūra (Microneedling)", duration:"1 h", price:"70 €", desc:"Itin plonos adatos kuria mikrokanalus ir aktyvina atsinaujinimą. Mažina raukšleles, aknės randelius, poras, pigmentaciją, gerina tonusą."},
+  {cat:"Mikroadatinės procedūros", title:"Mikroadatinė veido procedūra + kaklas", duration:"1 h", price:"100 €", desc:"Veidas ir kaklas – kolageno aktyvinimas ir tekstūros gerinimas."},
+  {cat:"Mikroadatinės procedūros", title:"Mikroadatinė veido procedūra + kaklas + dekoltė", duration:"1 h", price:"120 €", desc:"Platesnė zona – vienodesnis tonas ir stangrumas."},
+  {cat:"Valymai", title:"Kombinuotas veido valymas", duration:"1 h 40 min", price:"75 €", desc:"Paruošimas, mechaninis valymas ir odos raminimas. Rezultatas – švari, gaivi ir lygesnė oda."},
+  {cat:"Valymai", title:"Mechaninis dekoltė srities valymas", duration:"1 h 40 min", price:"75 €", desc:"Kruopštus valymas dekoltė srityje – mažina užsikimšusias poras ir nelygumus."},
+  {cat:"Valymai", title:"Mechaninis veido valymas", duration:"1 h 40 min", price:"75 €", desc:"Komedonų, inkštirų ir nešvarumų šalinimas + raminančios kaukės/serumas."},
+  {cat:"Valymai", title:"Mechaninis nugaros valymas", duration:"1 h 40 min", price:"100 €", desc:"Giluminis nugaros odos išvalymas, sumažina inkštirus ir grūdėtumą."},
+  {cat:"Pilingai", title:"Veido rūgštinis pilingas", duration:"1 h", price:"55 €", desc:"Švelniai, bet veiksmingai atnaujina odą: skaistina, mažina pigmentaciją, spuogelius ir poras, lygina smulkias raukšleles."},
+  {cat:"Pilingai", title:"Cheminis pilingas su bio-revitalizacija", duration:"1 h", price:"80 €", desc:"Rūgščių atnaujinimas + bio-revitalizuojantys komponentai (aminorūgštys, vitaminai, peptidai) – drėgmė, stangrumas, skaistumas."},
+  {cat:"Pilingai", title:"DEMELA „Angelų pilingas“ pigmentacijai", duration:"1 h", price:"70 €", desc:"Sukurta pigmentacijai mažinti ir tonui suvienodinti. Ramina uždegimą, drėkina, suteikia švytėjimo."},
+  {cat:"Pilingai", title:"Koralinis pilingas", duration:"1 h", price:"80 €", desc:"Jūros koralų, mineralų ir ekstraktų pagrindu. Giliai atnaujina, skatina mikrocirkuliaciją, mažina randelius ir pigmentaciją."},
+  {cat:"Beadatinė mezoterapija", title:"Veido beadatinė mezoterapija MesoJect Gun", duration:"1 h 15 min", price:"100 €", desc:"Elektroporacija ir dermoporacija be adatų: HA, vitaminai, peptidai, antioksidantai – giliai drėkina ir stiprina barjerą."},
+  {cat:"Beadatinė mezoterapija", title:"Beadatinė mezoterapija: veidas + kaklas + dekoltė", duration:"1 h 30 min", price:"120 €", desc:"Platesnė zona – intensyvus drėkinimas, stangrinimas ir skaistinimas be punkcijų."},
+  {cat:"Beadatinė mezoterapija", title:"Beadatinė mezoterapija su egzosomomis", duration:"1 h 15 min", price:"170 €", desc:"Egzosomų kompleksas – regeneracija, anti-age ir raminimas be adatų."},
+  {cat:"Drėkinimas ir regeneracija", title:"Drėkinamoji veido procedūra", duration:"1 h 20 min", price:"65 €", desc:"Profesionalūs serumai ir kaukės atkuria drėgmės balansą, stiprina apsauginį barjerą, suteikia švytėjimo."},
+  {cat:"Drėkinimas ir regeneracija", title:"ALA Factor – odos regeneracijos ir energijos procedūra", duration:"1 h", price:"70 €", desc:"5-ALA ir peptidai skatina ląstelių regeneraciją, gerina elastingumą, ramina ir skaistina."},
+  {cat:"Drėkinimas ir regeneracija", title:"Liquid Crystals Complex veido procedūra", duration:"1 h", price:"80 €", desc:"Lyotropiniai skystieji kristalai – gilesnis įsisavinimas, stipresnis barjeras, glotnesnė tekstūra ir ilgalaikė drėgmė."},
+  {cat:"Drėkinimas ir regeneracija", title:"Oxygen / Deguonies terapija veidui", duration:"1 h", price:"70 €", desc:"Aktyvus deguonies gelis (putojantis) skatina mikrocirkuliaciją, kolageną ir suteikia sveiką spindesį."},
+  {cat:"Aparatinės veido procedūros", title:"Radijo dažnių RF liftingas veidui", duration:"1 h 20 min", price:"80 €", desc:"RF bangos giliai šildo audinius, skatina kolageno/elastino gamybą – stangrumas, lygesnis reljefas ir skaistumas."},
+  {cat:"Paaugliams", title:"Veido procedūra paaugliams", duration:"1 h 15 min", price:"40 €", desc:"Švelni, bet efektyvi jaunai odai: gilus valymas, riebalų balansas, sudirgimų raminimas ir namų rekomendacijos."},
+  {cat:"Galvos odai", title:"Beadatinė mezoterapija galvos odai (maitinantis peptidinis mezokokteilis)", duration:"1 h", price:"100 €", desc:"Peptidai, vitaminai ir aminorūgštys pagerina galvos odos būklę, ramina ir maitina."},
+  {cat:"Galvos odai", title:"Beadatinė mezoterapija galvos odai (plaukų augimui: peptidai + augimo faktorius)", duration:"1 h", price:"120 €", desc:"Stiprina folikulus, mažina slinkimą, skatina naujų plaukų augimą."},
+  {cat:"Galvos odai", title:"Beadatinė mezoterapija galvos odai (egzosomos – slinkimo mažinimui ir augimui)", duration:"1 h", price:"150 €", desc:"Egzosomų terapija gerina folikulų būklę, mažina slinkimą ir aktyvina augimą."},
+  {cat:"Kūno formavimas", title:"Liekninamoji lazerinė procedūra Xerona", duration:"30 min", price:"50 €", desc:"Šalto lazerio technologija saugiai mažina kūno apimtis, nepažeidžia audinių, nėra reabilitacijos."},
+  {cat:"Kūno formavimas", title:"EMS elektrostimuliacija", duration:"45 min", price:"60 €", desc:"Elektros impulsai aktyvina iki ~90% raumenų – tonusas, laikysenos gerinimas, apimčių mažinimas."},
+  {cat:"Kūno formavimas", title:"Presoterapija (limfodrenažas)", duration:"30 min", price:"25 €", desc:"Ritmiški suspaudimai aktyvina limfotaką, mažina tinimus ir skysčių kaupimąsi, gerina tonusą ir padeda kovoti su celiulitu."}
+];
+
+const $grid=document.getElementById('grid');
+const $q=document.getElementById('q');
+const $cat=document.getElementById('category');
+
+function uniq(a){return[...new Set(a)]}
+function escapeHtml(s){
+  return String(s||'').replace(/[&<>\"']/g, function(m){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m];
+  });
+}
+
+function buildCats(){
+  const cats=uniq(SERVICES.map(s=>s.cat)).sort((a,b)=>a.localeCompare(b,'lt'));
+  $cat.innerHTML = '<option value="all">Visos kategorijos</option>' + cats.map(c=>`<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join('');
+}
+
+function render(){
+  const q = ($q.value||'').toLowerCase().trim();
+  const cat = $cat.value;
+  const items = SERVICES.filter(s => (cat==='all'||s.cat===cat) && (!q||(s.title+' '+s.desc+' '+s.cat).toLowerCase().includes(q)));
+  $grid.innerHTML = items.map(s => `
+    <article class="card" tabindex="0">
+      <div class="cat">${escapeHtml(s.cat)}</div>
+      <div class="title">${escapeHtml(s.title)}</div>
+      <div class="meta">Trukmė: ${escapeHtml(s.duration)} <span class="price">• ${escapeHtml(s.price)}</span></div>
+      <div class="desc">${escapeHtml(s.desc)}</div>
+    </article>
+  `).join('') || '<p class="muted">Nerasta atitinkančių procedūrų.</p>';
+}
+
+$q.addEventListener('input', render);
+$cat.addEventListener('change', render);
+buildCats(); render();
+</script>
+</body>
+</html>
