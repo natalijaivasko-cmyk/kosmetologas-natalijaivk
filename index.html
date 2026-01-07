@@ -1,134 +1,127 @@
 <!doctype html>
 <html lang="lt">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kosmetologė Natalija Ivaško — procedūros, kainos</title>
-  <meta name="description" content="Kosmetologė Natalija Ivaško – profesionalios veido ir galvos odos procedūros. Kainos, trukmės, aprašymai.">
-  <meta name="theme-color" content="#f6a84f">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kosmetologė Natalija Ivaško</title>
+<meta name="description" content="Profesionalios kosmetologinės procedūros veidui ir galvos odai.">
+<meta name="theme-color" content="#f6a84f">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --bg:#fffaf7; --card:#ffffff; --ink:#101114; --muted:#6b6b6b;
-      --brand1:#f6a84f; --brand2:#f17d5c; --stroke:#f1e2d8;
-      --radius:16px; --shadow:0 10px 24px rgba(0,0,0,.06);
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font:16px/1.6 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial;
-      color:var(--ink);
-      background:linear-gradient(120deg, #fff5ec, #fff9f7 40%);
-    }
-    header{
-      position:sticky; top:0; z-index:50;
-      background:rgba(255,255,255,.92);
-      backdrop-filter:blur(12px);
-      border-bottom:1px solid var(--stroke);
-    }
-    .wrap{max-width:1100px; margin:0 auto; padding:14px 18px}
-    .header-block{display:flex; gap:16px; align-items:center}
-    .avatar{
-      width:90px; height:90px; border-radius:50%;
-      object-fit:cover; object-position:50% 30%;
-      box-shadow:0 4px 12px rgba(0,0,0,.1);
-      border:3px solid #fff;
-    }
-    h1{
-      margin:0;
-      font-family:'Playfair Display', serif;
-      font-size:clamp(24px,3.2vw,34px);
-      color:#d97a5c;
-    }
-    .sub{font-size:14px; font-style:italic; color:#a57b6a}
+<style>
+:root{
+  --bg:#fffaf7; --card:#fff; --ink:#101114; --muted:#6b6b6b;
+  --brand1:#f6a84f; --brand2:#f17d5c; --stroke:#f1e2d8;
+  --radius:16px; --shadow:0 10px 24px rgba(0,0,0,.06);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font:16px/1.6 'Poppins',sans-serif;
+  background:linear-gradient(120deg,#fff5ec,#fff9f7 40%);
+  color:var(--ink);
+}
+header{
+  position:sticky; top:0; z-index:50;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--stroke);
+}
+.wrap{max-width:1100px;margin:0 auto;padding:14px 18px}
+.header-block{display:flex;gap:16px;align-items:center}
+.avatar{
+  width:90px;height:90px;border-radius:50%;
+  object-fit:cover;object-position:50% 30%;
+  border:3px solid #fff;box-shadow:0 4px 12px rgba(0,0,0,.1)
+}
+h1{margin:0;font-family:'Playfair Display',serif;color:#d97a5c}
+.sub{font-size:14px;font-style:italic;color:#a57b6a}
 
-    .toolbar{display:flex; gap:10px; margin-top:12px; flex-wrap:wrap}
-    .toolbar input,.toolbar select{
-      border:1px solid var(--stroke);
-      border-radius:999px;
-      padding:12px 14px;
-      background:#fff;
-      font-size:16px;
-      min-width:clamp(200px,40vw,320px);
-    }
+.lang-switch{margin-left:auto;display:flex;gap:8px}
+.lang-switch button{
+  border:1px solid var(--stroke);
+  background:#fff;
+  padding:6px 12px;
+  border-radius:999px;
+  font-weight:600;
+  cursor:pointer;
+}
+.lang-switch button.active{
+  background:linear-gradient(135deg,var(--brand1),var(--brand2));
+  color:#fff;
+}
 
-    main{padding:22px 18px 92px}
-    .grid{
-      max-width:1100px;
-      margin:0 auto;
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:16px;
-    }
-    .card{
-      background:var(--card);
-      border:1px solid var(--stroke);
-      border-radius:var(--radius);
-      padding:16px;
-      box-shadow:var(--shadow);
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-    }
-    .cat{
-      font-size:12px;
-      color:#fff;
-      background:linear-gradient(135deg,var(--brand1),var(--brand2));
-      padding:4px 10px;
-      border-radius:999px;
-      align-self:flex-start;
-    }
-    .title{font-weight:700; font-size:18px}
-    .meta{font-size:14px; color:var(--muted)}
-    .price{font-weight:800; color:var(--ink)}
-    .desc{font-size:14px; color:#333}
-    .desc ul{padding-left:18px; margin:8px 0}
-    .desc li{margin:4px 0}
+.toolbar{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+.toolbar input,.toolbar select{
+  border:1px solid var(--stroke);
+  border-radius:999px;
+  padding:12px 14px;
+  font-size:16px;
+}
 
-    footer{
-      position:fixed; bottom:0; left:0; right:0;
-      background:rgba(255,255,255,.95);
-      border-top:1px solid var(--stroke);
-      backdrop-filter:blur(10px);
-    }
-    .cta{
-      max-width:1100px;
-      margin:0 auto;
-      padding:10px 14px;
-      display:flex;
-      justify-content:center;
-      gap:10px;
-    }
-    .cta a{
-      padding:12px 18px;
-      border-radius:14px;
-      font-weight:700;
-      text-decoration:none;
-    }
-    .btn-primary{
-      color:#fff;
-      background:linear-gradient(135deg,var(--brand1),var(--brand2));
-    }
-  </style>
+main{padding:22px 18px 92px}
+.grid{
+  max-width:1100px;margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:16px
+}
+.card{
+  background:var(--card);
+  border:1px solid var(--stroke);
+  border-radius:var(--radius);
+  padding:16px;
+  box-shadow:var(--shadow);
+}
+.cat{
+  font-size:12px;color:#fff;
+  background:linear-gradient(135deg,var(--brand1),var(--brand2));
+  padding:4px 10px;border-radius:999px;
+  display:inline-block;margin-bottom:6px
+}
+.title{font-size:18px;font-weight:700}
+.meta{font-size:14px;color:var(--muted)}
+.price{font-weight:800;color:var(--ink)}
+.desc ul{padding-left:18px;margin:8px 0}
+.desc li{margin:4px 0}
+
+footer{
+  position:fixed;bottom:0;left:0;right:0;
+  background:rgba(255,255,255,.95);
+  border-top:1px solid var(--stroke)
+}
+.cta{text-align:center;padding:10px}
+.cta a{
+  padding:12px 18px;
+  border-radius:14px;
+  font-weight:700;
+  text-decoration:none;
+  color:#fff;
+  background:linear-gradient(135deg,var(--brand1),var(--brand2))
+}
+</style>
 </head>
 
 <body>
 <header>
   <div class="wrap">
     <div class="header-block">
-      <img src="natalija.jpg" alt="Kosmetologė Natalija Ivaško" class="avatar">
+      <img src="natalija.jpg" class="avatar" alt="">
       <div>
         <h1>Kosmetologė Natalija Ivaško</h1>
-        <div class="sub">Profesionali odos priežiūra: aknei, pigmentacijai, jauninimui</div>
+        <div class="sub" id="subtitle"></div>
+      </div>
+      <div class="lang-switch">
+        <button id="ltBtn" class="active">LT</button>
+        <button id="ruBtn">RU</button>
       </div>
     </div>
 
     <div class="toolbar">
-      <input id="q" type="search" placeholder="Paieška procedūrai…">
+      <input id="q" type="search" placeholder="Paieška…">
       <select id="category"><option value="all">Visos kategorijos</option></select>
     </div>
   </div>
@@ -140,137 +133,256 @@
 
 <footer>
   <div class="cta">
-    <a class="btn-primary" href="https://www.instagram.com/natalija_ivsk" target="_blank">Susisiekti</a>
+    <a href="https://www.instagram.com/natalija_ivsk" target="_blank" id="contactBtn"></a>
   </div>
 </footer>
 
 <script>
-const SERVICES = [
-  {
-    cat:"Valymai",
-    title:"Veido valymas",
-    duration:"1 val. 30 min.",
-    price:"70 €",
-    desc:`
-      <p>Enziminis ir rūgštinis šveitimas, šaltasis drėkinimas, porų paruošimas, mechaninis valymas.</p>
-      <ul>
-        <li>Priešuždegiminė ir raminamoji kaukė</li>
-        <li>LED terapija</li>
-        <li>Išsami konsultacija ir namų priežiūros rekomendacijos</li>
-      </ul>`
+/* ===== TEKSTAI ===== */
+const UI = {
+  lt:{
+    subtitle:"Profesionali odos priežiūra: aknei, pigmentacijai, jauninimui",
+    search:"Paieška…",
+    contact:"Susisiekti"
   },
-  {
-    cat:"Pilingai",
-    title:"Veido rūgštinis pilingas",
-    duration:"60 min.",
-    price:"50 €",
-    desc:`
-      <p>Profesionali odos atnaujinimo procedūra su individualiai parinktais rūgščių deriniais.</p>
-      <ul>
-        <li>Aknė, postaknė</li>
-        <li>Kuperozė, rožinė</li>
-        <li>Pigmentacija, poros</li>
-        <li>Anti-age ir „glow“ efektas</li>
-      </ul>`
-  },
-  {
-    cat:"Pilingai",
-    title:"Biorevitalizuojantis rūgštinis pilingas",
-    duration:"60 min.",
-    price:"60 €",
-    desc:`
-      <p>Rūgštys, aminorūgštys, vitaminai ir antioksidantai.</p>
-      <ul>
-        <li>Pavargusiai, papilkėjusiai odai</li>
-        <li>Po aknės, randeliams</li>
-        <li>Skaistumas ir stangrumas</li>
-      </ul>`
-  },
-  {
-    cat:"Mikroadatinės procedūros",
-    title:"Dermapen procedūra veidui",
-    duration:"60 min.",
-    price:"70 €",
-    desc:`
-      <ul>
-        <li>Smulkios raukšlės</li>
-        <li>Poros ir randeliai</li>
-        <li>Stangrumas ir tonusas</li>
-      </ul>`
-  },
-  {
-    cat:"Giluminės procedūros",
-    title:"Procedūra, veikianti giliuosius odos sluoksnius",
-    duration:"60 min.",
-    price:"120 €",
-    desc:`
-      <ul>
-        <li>Intensyvus drėkinimas</li>
-        <li>Stangrumo gerinimas</li>
-        <li>Odos atsinaujinimas</li>
-      </ul>`
-  },
-  {
-    cat:"Galvos odai",
-    title:"Dermapen procedūra galvos odai",
-    duration:"40 min.",
-    price:"60 €",
-    desc:`
-      <ul>
-        <li>Plaukų slinkimo mažinimas</li>
-        <li>Naujų plaukų augimas</li>
-        <li>Kraujotakos aktyvinimas</li>
-      </ul>`
-  },
-  {
-    cat:"Paaugliams",
-    title:"Procedūra paaugliams",
-    duration:"1 val. 30 min.",
-    price:"45 €",
-    desc:`
-      <ul>
-        <li>Aknės kontrolė</li>
-        <li>Švelnus valymas</li>
-        <li>Edukacija ir namų priežiūra</li>
-      </ul>`
-  },
-  {
-    cat:"Masažai",
-    title:"Gilus terapinis veido masažas",
-    duration:"60 min.",
-    price:"45 €",
-    desc:`
-      <ul>
-        <li>Liftingo efektas</li>
-        <li>Raumenų atpalaidavimas</li>
-        <li>Limfotakos gerinimas</li>
-      </ul>`
+  ru:{
+    subtitle:"Профессиональный уход за кожей: акне, пигментация, омоложение",
+    search:"Поиск…",
+    contact:"Связаться"
   }
-];
+};
 
+/* ===== PROCEDŪROS ===== */
+const SERVICES = {
+lt:[
+{
+cat:"Valymai",
+title:"Veido valymas",
+duration:"1 val. 30 min.",
+price:"70 €",
+desc:`<p>Kompleksinė veido valymo procedūra, skirta giliam odos išvalymui ir atstatymui.</p>
+<ul>
+<li>Enziminis ir rūgštinis šveitimas</li>
+<li>Šaltasis drėkinimas</li>
+<li>Porų paruošimas ir mechaninis valymas</li>
+<li>Priešuždegiminė, antibakterinė ir raminamoji kaukė</li>
+<li>LED terapija</li>
+<li>Išsami konsultacija ir namų priežiūros rekomendacijos</li>
+</ul>`
+},
+{
+cat:"Pilingai",
+title:"Veido rūgštinis pilingas",
+duration:"60 min.",
+price:"50 €",
+desc:`<p>Profesionali odos atnaujinimo procedūra su individualiai parinktais rūgščių deriniais.</p>
+<ul>
+<li>Aknė ir postaknė</li>
+<li>Kuperozė ir rožinė</li>
+<li>Pigmentacija, netolygus odos tonas</li>
+<li>Porų mažinimas</li>
+<li>Anti-age ir „glow“ efektas</li>
+</ul>`
+},
+{
+cat:"Pilingai",
+title:"Biorevitalizuojantis rūgštinis pilingas",
+duration:"60 min.",
+price:"60 €",
+desc:`<p>Rūgščių, aminorūgščių, vitaminų ir antioksidantų derinys.</p>
+<ul>
+<li>Papilkėjusiai, pavargusiai odai</li>
+<li>Po aknės, esant randeliams</li>
+<li>Smulkioms raukšlėms</li>
+<li>Suteikia skaistumo ir stangrumo</li>
+</ul>`
+},
+{
+cat:"Mikroadatinės procedūros",
+title:"Dermapen procedūra veidui",
+duration:"60 min.",
+price:"70 €",
+desc:`<ul>
+<li>Odos tekstūros ir tono gerinimas</li>
+<li>Smulkių raukšlių mažinimas</li>
+<li>Randelių ir postaknės korekcija</li>
+<li>Porų mažinimas</li>
+</ul>`
+},
+{
+cat:"Giluminės procedūros",
+title:"Procedūra, veikianti giliuosius odos sluoksnius",
+duration:"60 min.",
+price:"120 €",
+desc:`<ul>
+<li>Intensyvus drėkinimas</li>
+<li>Stangrumo ir elastingumo didinimas</li>
+<li>Odos atsinaujinimas</li>
+<li>Švytėjimo („glow“) efektas</li>
+</ul>`
+},
+{
+cat:"Galvos odai",
+title:"Dermapen procedūra galvos odai",
+duration:"40 min.",
+price:"60 €",
+desc:`<ul>
+<li>Plaukų slinkimo mažinimas</li>
+<li>Naujų plaukų augimo skatinimas</li>
+<li>Galvos odos kraujotakos gerinimas</li>
+</ul>`
+},
+{
+cat:"Paaugliams",
+title:"Procedūra paaugliams",
+duration:"1 val. 30 min.",
+price:"45 €",
+desc:`<ul>
+<li>Aknės kontrolė</li>
+<li>Švelnus, amžiui pritaikytas valymas</li>
+<li>Edukacija ir namų priežiūros parinkimas</li>
+</ul>`
+},
+{
+cat:"Masažai",
+title:"Gilus terapinis veido masažas",
+duration:"60 min.",
+price:"45 €",
+desc:`<ul>
+<li>Veido raumenų atpalaidavimas</li>
+<li>Liftingo efektas</li>
+<li>Limfotakos gerinimas</li>
+</ul>`
+}
+],
+ru:[
+{
+cat:"Чистки",
+title:"Чистка лица",
+duration:"1 ч 30 мин",
+price:"70 €",
+desc:`<p>Комплексная процедура глубокого очищения кожи.</p>
+<ul>
+<li>Энзимный и кислотный пилинг</li>
+<li>Холодное увлажнение</li>
+<li>Подготовка пор и механическая чистка</li>
+<li>Противовоспалительная и успокаивающая маска</li>
+<li>LED-терапия</li>
+<li>Консультация и рекомендации по уходу</li>
+</ul>`
+},
+{
+cat:"Пилинги",
+title:"Кислотный пилинг лица",
+duration:"60 мин",
+price:"50 €",
+desc:`<ul>
+<li>Акне и постакне</li>
+<li>Купероз и розацеа</li>
+<li>Пигментация</li>
+<li>Сужение пор</li>
+<li>Эффект сияния</li>
+</ul>`
+},
+{
+cat:"Пилинги",
+title:"Биоревитализирующий кислотный пилинг",
+duration:"60 мин",
+price:"60 €",
+desc:`<ul>
+<li>Усталой и тусклой коже</li>
+<li>Мелкие морщины</li>
+<li>Неровный тон</li>
+<li>Сияние и упругость</li>
+</ul>`
+},
+{
+cat:"Микроигольчатые процедуры",
+title:"Процедура Dermapen для лица",
+duration:"60 мин",
+price:"70 €",
+desc:`<ul>
+<li>Обновление кожи</li>
+<li>Сужение пор</li>
+<li>Коррекция рубцов</li>
+<li>Повышение упругости</li>
+</ul>`
+},
+{
+cat:"Глубокие процедуры",
+title:"Процедура воздействия на глубокие слои кожи",
+duration:"60 мин",
+price:"120 €",
+desc:`<ul>
+<li>Интенсивное увлажнение</li>
+<li>Омоложение</li>
+<li>Выравнивание текстуры кожи</li>
+</ul>`
+},
+{
+cat:"Кожа головы",
+title:"Dermapen процедура для кожи головы",
+duration:"40 мин",
+price:"60 €",
+desc:`<ul>
+<li>Снижение выпадения волос</li>
+<li>Стимуляция роста</li>
+<li>Улучшение микроциркуляции</li>
+</ul>`
+},
+{
+cat:"Подросткам",
+title:"Процедура для подростков",
+duration:"1 ч 30 мин",
+price:"45 €",
+desc:`<ul>
+<li>Контроль акне</li>
+<li>Деликатное очищение</li>
+<li>Подбор домашнего ухода</li>
+</ul>`
+},
+{
+cat:"Массажи",
+title:"Глубокий терапевтический массаж лица",
+duration:"60 мин",
+price:"45 €",
+desc:`<ul>
+<li>Лифтинг-эффект</li>
+<li>Расслабление мышц</li>
+<li>Лимфодренаж</li>
+</ul>`
+}
+]
+};
+
+let lang="lt";
 const grid=document.getElementById("grid");
 const q=document.getElementById("q");
 const cat=document.getElementById("category");
 
 function render(){
-  grid.innerHTML=SERVICES
-    .filter(s=>(cat.value==="all"||s.cat===cat.value)
-      &&(!q.value|| (s.title+s.desc+s.cat).toLowerCase().includes(q.value.toLowerCase())))
+  document.getElementById("subtitle").innerText=UI[lang].subtitle;
+  document.getElementById("contactBtn").innerText=UI[lang].contact;
+  q.placeholder=UI[lang].search;
+
+  const data=SERVICES[lang];
+  const cats=[...new Set(data.map(s=>s.cat))];
+  cat.innerHTML='<option value="all">---</option>'+cats.map(c=>`<option>${c}</option>`).join("");
+
+  grid.innerHTML=data
+    .filter(s=>(cat.value==="all"||s.cat===cat.value)&&(!q.value||(s.title+s.desc).toLowerCase().includes(q.value.toLowerCase())))
     .map(s=>`
       <article class="card">
         <div class="cat">${s.cat}</div>
         <div class="title">${s.title}</div>
-        <div class="meta">Trukmė: ${s.duration} • <span class="price">${s.price}</span></div>
+        <div class="meta">${s.duration} • <span class="price">${s.price}</span></div>
         <div class="desc">${s.desc}</div>
       </article>`).join("");
 }
 
-[...new Set(SERVICES.map(s=>s.cat))].forEach(c=>{
-  cat.innerHTML+=`<option value="${c}">${c}</option>`;
-});
+document.getElementById("ltBtn").onclick=()=>{lang="lt";ltBtn.classList.add("active");ruBtn.classList.remove("active");render();}
+document.getElementById("ruBtn").onclick=()=>{lang="ru";ruBtn.classList.add("active");ltBtn.classList.remove("active");render();}
 
-q.oninput=render;
-cat.onchange=render;
 render();
 </script>
 </body>
