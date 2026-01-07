@@ -1,122 +1,199 @@
-<!doctype html>
-<html lang="lt">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kosmetologė Natalija Ivaško — procedūros, kainos, registracija</title>
-  <meta name="description" content="Kosmetologė Natalija Ivaško: mikroadatinės, pilingai, valymai, mezoterapijos, kūno procedūros. Kainos, trukmės, aprašymai.">
-  <meta name="theme-color" content="#f6a84f">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <style>
-    :root{
-      --bg:#fffaf7; --card:#ffffff; --ink:#101114; --muted:#6b6b6b;
-      --brand1:#f6a84f; --brand2:#f17d5c; --stroke:#f1e2d8;
-      --radius:16px; --shadow:0 10px 24px rgba(0,0,0,.06);
-    }
-    *{box-sizing:border-box}
-    body{margin:0; color:var(--ink); font:16px/1.6 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial;
-      background:linear-gradient(120deg, #fff5ec, #fff9f7 40%); -webkit-text-size-adjust:100%}
-    header{position:sticky; top:0; z-index:50; background:rgba(255,255,255,.92); backdrop-filter:blur(12px); border-bottom:1px solid var(--stroke)}
-    .wrap{max-width:1100px; margin:0 auto; padding:14px 18px}
-    .header-block{display:flex; align-items:center; gap:16px; padding:8px 0}
-    .avatar{width:90px; height:90px; border-radius:50%; object-fit:cover;           /* užpildo ratą */object-position:50% 30%;    /* šiek tiek aukščiau (pakelk/mažink skaičių) */box-shadow:0 4px 12px rgba(0,0,0,.1); border:3px solid #fff;}
-    h1{margin:0; font-family:'Playfair Display', serif; font-size:clamp(24px,3.2vw,34px); font-weight:600; color:#d97a5c}
-    .sub{margin-top:4px; font-size:14px; font-weight:300; font-style:italic; color:#a57b6a}
-    .toolbar{display:flex; gap:10px; margin-top:12px; flex-wrap:wrap}
-    .toolbar input,.toolbar select{border:1px solid var(--stroke); border-radius:999px; padding:12px 14px; background:#fff; min-width:clamp(200px,40vw,320px); font-size:16px}
-    main{padding:22px 18px 92px}
-    .grid{max-width:1100px; margin:0 auto; display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px}
-    .card{background:var(--card); border:1px solid var(--stroke); border-radius:var(--radius); padding:16px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:8px; transition:transform .15s ease}
-    .card:hover{transform:translateY(-2px)}
-    .cat{font-size:12px; color:#fff; background:linear-gradient(135deg,var(--brand1),var(--brand2)); padding:4px 10px; border-radius:999px; align-self:flex-start}
-    .title{font-weight:700; font-size:18px}
-    .meta{font-size:14px; color:var(--muted)} .price{margin-left:6px; font-weight:800; color:var(--ink)}
-    .desc{font-size:14px; color:#333}
-    .social{display:flex; gap:10px; flex-wrap:wrap; margin-top:10px}
-    .social a{display:inline-block; border-radius:999px; padding:8px 14px; text-decoration:none; color:#fff; font-weight:650; background:linear-gradient(135deg,var(--brand1),var(--brand2)); box-shadow:0 4px 10px rgba(0,0,0,.1)}
-    footer{position:fixed; left:0; right:0; bottom:0; z-index:40; background:rgba(255,255,255,.95); border-top:1px solid var(--stroke); backdrop-filter:blur(10px)}
-    .cta{max-width:1100px; margin:0 auto; padding:10px 14px; display:flex; gap:10px; align-items:center; justify-content:center; flex-wrap:wrap}
-    .cta a{display:inline-block; text-decoration:none; padding:12px 16px; border-radius:12px; font-weight:700}
-    .btn-primary{color:#fff; background:linear-gradient(135deg,var(--brand1),var(--brand2))}
-    .btn-ghost{color:var(--ink); border:1px solid var(--stroke); background:#fff}
-    @media (prefers-color-scheme: dark){
-      :root{--bg:#0b0d12; --card:#0f1218; --ink:#eef2ff; --muted:#9aa3b2; --stroke:#222938; --shadow:none; --brand1:#f6b469; --brand2:#f39a7a}
-      header{background:rgba(15,18,24,.7)} body{background:linear-gradient(120deg, #171a22, #11151d 50%)}
-      .desc{color:#dbe2f1} .btn-ghost{background:#0f1218; border-color:#222938; color:#eef2ff}
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="wrap">
-      <div class="header-block">
-        <img src="natalija.jpg" alt="Kosmetologė Natalija Ivaško" class="avatar">
-        <div>
-          <h1>Kosmetologė Natalija Ivaško</h1>
-          <div class="sub">Profesionali odos priežiūra: aknei, pigmentacijai, jauninimui.</div>
-        </div>
-      </div>
-      <div class="toolbar" role="search">
-        <input id="q" type="search" placeholder="Paieška procedūrai…" aria-label="Paieška">
-        <select id="category" aria-label="Kategorija"><option value="all">Visos kategorijos</option></select>
-      </div>
-      <div class="social" aria-label="Socialiniai tinklai">
-        <a href="https://www.instagram.com/natalija_ivsk?igsh=c3g3MzY5c3JyM2Mw" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://www.facebook.com/share/1UcmQPsns1/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
-      </div>
-    </div>
-  </header>
-
-  <main><div id="grid" class="grid" aria-live="polite"></div></main>
-
-  <footer>
-    <div class="cta">
-      <a class="btn-primary" href="https://www.instagram.com/natalija_ivsk?igsh=c3g3MzY5c3JyM2Mw" target="_blank" rel="noopener">Susisiekti</a>
-      <a class="btn-ghost" href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'})">Į viršų</a>
-    </div>
-  </footer>
-
-  <script>
+<script>
   const SERVICES = [
-    {cat:"Valymai", title:"Veido valymas", duration:"1 val. 30 min.", price:"70 €",
-     desc:"Procedūros metu atliekamas enziminis ir rūgštinis veido šveitimas, šaltasis drėkinimas, porų paruošimas valymui, mechaninis valymas. Po procedūros uždedama priešuždegiminė, antibakterinė ir raminamoji kaukė, taikoma LED terapija. Į procedūrą įeina išsami konsultacija ir namų priežiūros rekomendacijos."},
+    {
+      cat: "Valymai",
+      title: "Veido valymas",
+      duration: "1 val. 30 min.",
+      price: "70 €",
+      descHtml: `
+        <p>Procedūros metu atliekamas enziminis ir rūgštinis veido šveitimas, šaltasis drėkinimas, porų paruošimas valymui, mechaninis valymas.</p>
+        <p>Po procedūros uždedama priešuždegiminė, antibakterinė ir raminamoji kaukė, taikoma LED terapija.</p>
+        <p><strong>Į procedūrą įeina</strong> išsami konsultacija ir namų priežiūros rekomendacijos.</p>
+      `
+    },
 
-    {cat:"Pilingai", title:"Veido rūgštinis pilingas", duration:"60 min.", price:"50 €",
-     desc:"Tai profesionali odos atnaujinimo procedūra, kurios metu naudojami individualiai parinkti rūgščių kokteiliai, pritaikyti konkrečiai odos problemai ir poreikiui. Rūgščių deriniai parenkami individualiai, esant: kuperozei ir rožinei (stiprinamas kapiliarų tonusas, mažinamas paraudimas), aknei ir postaknei (reguliuojama sebumo sekrecija, valomos poros), pigmentacijai ir netolygiam odos tonui, porų mažinimui ir odos reljefo lyginimui, liftingo ir anti-age efektui (smulkios raukšlės, stangrumo stoka), „glow“ efektui – skaistesnei, gaivesnei odai."},
+    {
+      cat: "Pilingai",
+      title: "Veido rūgštinis pilingas",
+      duration: "60 min.",
+      price: "50 €",
+      descHtml: `
+        <p>Tai profesionali odos atnaujinimo procedūra, kurios metu naudojami individualiai parinkti rūgščių kokteiliai, pritaikyti konkrečiai odos problemai ir poreikiui.</p>
+        <p><strong>Rūgščių deriniai parenkami individualiai, esant:</strong></p>
+        <ul>
+          <li>Kuperozei ir rožinei (stiprinamas kapiliarų tonusas, mažinamas paraudimas)</li>
+          <li>Aknės ir postaknei (reguliuojama sebumo sekrecija, valomos poros)</li>
+          <li>Pigmentacijai ir netolygiam odos tonui</li>
+          <li>Porų mažinimui ir odos reljefo lyginimui</li>
+          <li>Liftingo ir anti-age efektui (smulkios raukšlės, stangrumo stoka)</li>
+          <li>„Glow“ efektui – skaistesnei, gaivesnei odai</li>
+        </ul>
+      `
+    },
 
-    {cat:"Pilingai", title:"Biorevitalizuojantis rūgštinis pilingas", duration:"60 min.", price:"60 €",
-     desc:"Unikali formulė jungia rūgštis, amino rūgštis, vitaminus ir antioksidantus, todėl pilingas ne tik šveičia, bet ir aktyviai atkuria odą iš vidaus, nesukeldamas ryškaus paraudimo ar pleiskanojimo. Tinka: papilkėjusiai, pavargusiai odai; esant pigmentacijai, nelygiam odos tonui; po aknės, esant randeliams ir nelygumams; smulkioms raukšlėms, elastingumo praradimui. Suteikia skaistumo, stangrumo ir „glow“ efektą."},
+    {
+      cat: "Pilingai",
+      title: "Biorevitalizuojantis rūgštinis pilingas",
+      duration: "60 min.",
+      price: "60 €",
+      descHtml: `
+        <p>Unikali formulė jungia rūgštis, amino rūgštis, vitaminus ir antioksidantus, todėl pilingas ne tik šveičia, bet ir aktyviai atkuria odą iš vidaus, nesukeldamas ryškaus paraudimo ar pleiskanojimo.</p>
+        <p><strong>Tinka:</strong></p>
+        <ul>
+          <li>Papilkėjusiai, pavargusiai odai</li>
+          <li>Esant pigmentacijai, nelygiam odos tonui</li>
+          <li>Po aknės, esant randeliams ir nelygumams</li>
+          <li>Smulkioms raukšlėms, elastingumo praradimui</li>
+          <li>Suteikia skaistumo, stangrumo ir „glow“ efektą</li>
+        </ul>
+      `
+    },
 
-    {cat:"Mikroadatinės procedūros", title:"Dermapen procedūra veidui", duration:"60 min.", price:"70 €",
-     desc:"Tai moderni procedūra, skirta odos atsinaujinimui, stangrinimui ir tekstūros gerinimui. Procedūra atliekama individualiai parinkus protokolą ir aktyvius serumus (hialurono rūgštį, peptidus, vitaminus, PDRN ir kt.), atsižvelgiant į odos būklę ir tikslą. Gerina odos tekstūrą ir tonusą, mažina smulkias raukšles, stangrina ir atjaunina odą, padeda koreguoti randelius ir postakne, mažina išsiplėtusias poras, gerina drėgmės balansą ir švytėjimą, stiprina kapiliarus, mažina raudonį."},
+    {
+      cat: "Mikroadatinės procedūros",
+      title: "Dermapen procedūra veidui",
+      duration: "60 min.",
+      price: "70 €",
+      descHtml: `
+        <p>Tai moderni procedūra, skirta odos atsinaujinimui, stangrinimui ir tekstūros gerinimui. Procedūra atliekama individualiai parinkus protokolą ir aktyvius serumus (hialurono rūgštį, peptidus, vitaminus, PDRN ir kt.), atsižvelgiant į odos būklę ir tikslą.</p>
+        <ul>
+          <li>Gerina odos tekstūrą ir tonusą</li>
+          <li>Mažina smulkias raukšles</li>
+          <li>Stangrina ir atjaunina odą</li>
+          <li>Padeda koreguoti randelius ir postakne</li>
+          <li>Mažina išsiplėtusias poras</li>
+          <li>Gerina odos drėgmės balansą ir švytėjimą</li>
+          <li>Stiprina kapiliarus, mažina raudonį</li>
+        </ul>
+      `
+    },
 
-    {cat:"Injekcinės / giluminės procedūros", title:"Procedūra, veikianti giliuosius odos sluoksnius", duration:"60 min.", price:"120 €",
-     desc:"Tai efektyvi estetinė procedūra, veikianti giliuosius odos sluoksnius, skatinanti ląstelių atsinaujinimą, gerinanti odos būklę ir stabdanti senėjimo procesus. Naudojami individualiai parinkti kokteiliai: hialurono rūgštis, vitaminai ir mineralai, aminorūgštys, peptidai, polinukleotidai (PN / PDRN), antioksidantai. Poveikis: intensyvus drėkinimas, stangrumo ir elastingumo gerinimas, smulkių raukšlių mažinimas, odos tono ir tekstūros gerinimas, „glow“ efektas, pagreitintas atsistatymas, kapiliarų stiprinimas, veido apimčių ir pigmentacijos mažinimas."},
+    {
+      cat: "Injekcinės / giluminės procedūros",
+      title: "Procedūra, veikianti giliuosius odos sluoksnius",
+      duration: "60 min.",
+      price: "120 €",
+      descHtml: `
+        <p>Tai efektyvi estetinė procedūra, veikianti giliuosius odos sluoksnius, skatinanti ląstelių atsinaujinimą, gerinanti odos būklę ir stabdanti senėjimo procesus.</p>
+        <p>Procedūrai naudojami individualiai parinkti kokteiliai, kurių sudėtyje gali būti: hialurono rūgštis, vitaminai ir mineralai, aminorūgštys, peptidai, polinukleotidai (PN / PDRN), antioksidantai.</p>
+        <ul>
+          <li>Intensyvus odos drėkinimas</li>
+          <li>Stangrumo ir elastingumo gerinimas</li>
+          <li>Smulkių raukšlių mažinimas</li>
+          <li>Odos tono ir tekstūros gerinimas</li>
+          <li>Švytėjimo („glow“) efektas</li>
+          <li>Pagreitintas odos atsistatymas</li>
+          <li>Kapiliarų stiprinimas</li>
+          <li>Veido apimčių mažinimas</li>
+          <li>Pigmentacijos mažinimas</li>
+        </ul>
+      `
+    },
 
-    {cat:"Galvos odai", title:"Dermapen procedūra galvos odai", duration:"40 min.", price:"60 €",
-     desc:"Tai efektyvi procedūra, skirta plaukų slinkimo mažinimui, plaukų augimo skatinimui ir galvos odos būklės gerinimui. Aktyvina kraujotaką ir folikulų mitybą, stimuliuoja plaukų augimo faktorius, gerina aktyviųjų medžiagų įsisavinimą, pažadina „miegančius“ plaukų folikulus. Tinka esant difuziniam ar sezoniniam slinkimui, po streso, ligų ar hormoninių pokyčių, esant silpnai, išretėjusiai plaukų linijai, tiek moterims, tiek vyrams, kaip palaikomoji terapija po plaukų transplantacijos. Poveikis: mažina slinkimą, skatina naujų plaukų augimą, stiprina šaknis, gerina kraujotaką, normalizuoja riebalų išsiskyrimą, gerina bendrą galvos odos būklę."},
+    {
+      cat: "Galvos odai",
+      title: "Dermapen procedūra galvos odai",
+      duration: "40 min.",
+      price: "60 €",
+      descHtml: `
+        <p>Tai efektyvi procedūra, skirta plaukų slinkimo mažinimui, plaukų augimo skatinimui ir galvos odos būklės gerinimui. Aktyvina kraujotaką ir folikulų mitybą, stimuliuoja plaukų augimo faktorius, gerina aktyviųjų medžiagų įsisavinimą, pažadina „miegančius“ plaukų folikulus.</p>
+        <p>Tinka esant difuziniam ar sezoniniam plaukų slinkimui, po streso, ligų ar hormoninių pokyčių, esant silpnai, išretėjusiai plaukų linijai, tiek moterims, tiek vyrams, kaip palaikomoji terapija po plaukų transplantacijos.</p>
+        <ul>
+          <li>Mažina plaukų slinkimą</li>
+          <li>Skatina naujų plaukų augimą</li>
+          <li>Stiprina plaukų šaknis</li>
+          <li>Gerina galvos odos kraujotaką</li>
+          <li>Normalizuoja riebalų išsiskyrimą</li>
+          <li>Gerina bendrą galvos odos būklę</li>
+        </ul>
+      `
+    },
 
-    {cat:"Paaugliams", title:"Procedūra paaugliams", duration:"1 val. 30 min.", price:"45 €",
-     desc:"Tai kompleksinė, saugi ir edukacinė procedūra, skirta aknės gydymui, tinkamos odos priežiūros parinkimui ir sveikų įpročių formavimui paauglystėje. Procedūra orientuota ne tik į esamų bėrimų mažinimą, bet ir į aknės priežasčių supratimą, kad rezultatai būtų ilgalaikiai. Procedūra apima: odos būklės ir aknės formos įvertinimą, švelnų, amžiui pritaikytą valymą, priešuždegimines ir raminančias priemones, individualų kasdienės odos priežiūros parinkimą, išsamias gyvenimo būdo, mitybos ir higienos rekomendacijas."},
+    {
+      cat: "Paaugliams",
+      title: "Procedūra paaugliams",
+      duration: "1 val. 30 min.",
+      price: "45 €",
+      descHtml: `
+        <p>Tai kompleksinė, saugi ir edukacinė procedūra, skirta aknės gydymui, tinkamos odos priežiūros parinkimui ir sveikų įpročių formavimui paauglystėje. Procedūra orientuota ne tik į esamų bėrimų mažinimą, bet ir į aknės priežasčių supratimą, kad rezultatai būtų ilgalaikiai.</p>
+        <p><strong>Procedūra apima:</strong></p>
+        <ul>
+          <li>Odos būklės ir aknės formos įvertinimą</li>
+          <li>Švelnų, amžiui pritaikytą odos valymą</li>
+          <li>Priešuždegimines ir raminančias priemones</li>
+          <li>Individualų kasdienės odos priežiūros parinkimą</li>
+          <li>Išsamias gyvenimo būdo, mitybos ir higienos rekomendacijas</li>
+        </ul>
+      `
+    },
 
-    {cat:"Masažai", title:"Gilus terapinis veido masažas", duration:"60 min.", price:"45 €",
-     desc:"Tai intensyvi, rankomis atliekama terapinė procedūra, skirta veido raumenų atpalaidavimui, kraujotakos ir limfotakos gerinimui bei natūraliam liftingo efektui. Procedūra veikia ne tik odą, bet ir giliuosius veido raumenis bei fascijas, todėl rezultatai matomi jau po pirmo seanso. Naudojamos giluminės, lėtos ir tikslios technikos, dirbama su veido, kaklo ir pečių juostos raumenimis, fascijomis, limfine sistema. Poveikis: atpalaiduoja raumenis, mažina spazmus ir asimetrijas, gerina kraujotaką ir limfos nutekėjimą, ryškina kontūrus, suteikia liftingo ir „anti-age“ efektą, mažina paburkimą ir nuovargio požymius. Procedūra atliekama individualiai, atsižvelgiant į veido anatomiją ir poreikius."}
+    {
+      cat: "Masažai",
+      title: "Gilus terapinis veido masažas",
+      duration: "60 min.",
+      price: "45 €",
+      descHtml: `
+        <p>Tai intensyvi, rankomis atliekama terapinė procedūra, skirta veido raumenų atpalaidavimui, kraujotakos ir limfotakos gerinimui bei natūraliam liftingo efektui. Procedūra veikia ne tik odą, bet ir giliuosius veido raumenis bei fascijas, todėl rezultatai matomi jau po pirmo seanso.</p>
+        <p>Naudojamos giluminės, lėtos ir tikslios technikos, dirbama su veido, kaklo ir pečių juostos raumenimis, fascijomis, limfine sistema.</p>
+        <ul>
+          <li>Atpalaiduoja įsitempusius veido raumenis</li>
+          <li>Mažina raumeninius spazmus ir asimetrijas</li>
+          <li>Gerina kraujotaką ir limfos nutekėjimą</li>
+          <li>Ryškina veido kontūrus ir ovalą</li>
+          <li>Suteikia liftingo ir „anti-age“ efektą</li>
+          <li>Mažina paburkimą ir nuovargio požymius</li>
+        </ul>
+        <p>Procedūra atliekama individualiai, atsižvelgiant į veido anatomiją ir poreikius.</p>
+      `
+    }
   ];
 
-  const $grid=document.getElementById('grid'); const $q=document.getElementById('q'); const $cat=document.getElementById('category');
-  function uniq(a){return[...new Set(a)]}
-  function escapeHtml(s){return String(s||'').replace(/[&<>\"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
-  function buildCats(){const cats=uniq(SERVICES.map(s=>s.cat)).sort((a,b)=>a.localeCompare(b,'lt')); $cat.innerHTML='<option value="all">Visos kategorijos</option>'+cats.map(c=>`<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join('')}
-  function render(){const q=($q.value||'').toLowerCase().trim(); const cat=$cat.value; const items=SERVICES.filter(s=>(cat==='all'||s.cat===cat)&&(!q||(s.title+' '+s.desc+' '+s.cat).toLowerCase().includes(q))); $grid.innerHTML=items.map(s=>`
-    <article class="card" tabindex="0">
-      <div class="cat">${escapeHtml(s.cat)}</div>
-      <div class="title">${escapeHtml(s.title)}</div>
-      <div class="meta">Trukmė: ${escapeHtml(s.duration)} <span class="price">• ${escapeHtml(s.price)}</span></div>
-      <div class="desc">${escapeHtml(s.desc)}</div>
-    </article>`).join('')||'<p class="muted">Nerasta atitinkančių procedūrų.</p>'}
-  $q.addEventListener('input',render); $cat.addEventListener('change',render); buildCats(); render();
-  </script>
-</body>
-</html>
+  const $grid = document.getElementById('grid');
+  const $q = document.getElementById('q');
+  const $cat = document.getElementById('category');
+
+  function uniq(a){ return [...new Set(a)] }
+  function escapeHtml(s){
+    return String(s||'').replace(/[&<>\"']/g, m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))
+  }
+  function stripTags(html){
+    return String(html||'').replace(/<[^>]*>/g,' ').replace(/\s+/g,' ').trim();
+  }
+
+  // Paruošiam paieškos tekstą, kad paieška veiktų ir su HTML aprašymais
+  const SERVICES_PREP = SERVICES.map(s => ({
+    ...s,
+    _search: (s.title + ' ' + s.cat + ' ' + stripTags(s.descHtml)).toLowerCase()
+  }));
+
+  function buildCats(){
+    const cats = uniq(SERVICES_PREP.map(s=>s.cat)).sort((a,b)=>a.localeCompare(b,'lt'));
+    $cat.innerHTML =
+      '<option value="all">Visos kategorijos</option>' +
+      cats.map(c=>`<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join('');
+  }
+
+  function render(){
+    const q = ($q.value||'').toLowerCase().trim();
+    const cat = $cat.value;
+
+    const items = SERVICES_PREP.filter(s =>
+      (cat==='all' || s.cat===cat) &&
+      (!q || s._search.includes(q))
+    );
+
+    $grid.innerHTML = items.map(s => `
+      <article class="card" tabindex="0">
+        <div class="cat">${escapeHtml(s.cat)}</div>
+        <div class="title">${escapeHtml(s.title)}</div>
+        <div class="meta">Trukmė: ${escapeHtml(s.duration)} <span class="price">• ${escapeHtml(s.price)}</span></div>
+        <div class="desc">${s.descHtml}</div>
+      </article>
+    `).join('') || '<p class="muted">Nerasta atitinkančių procedūrų.</p>';
+  }
+
+  $q.addEventListener('input', render);
+  $cat.addEventListener('change', render);
+  buildCats();
+  render();
+</script>
